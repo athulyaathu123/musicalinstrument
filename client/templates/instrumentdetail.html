@@ -1,0 +1,18 @@
+{% extends 'ind.html'%}
+{% block nav %}
+<h1>{{product.name}}</h1>
+<div class="row jumbotron">
+    <div class="col">
+        <img width="100%" height="300px" src="{{product.image.url}}" alt="">
+    </div>
+    <div class="col">
+        <h1>{{product.name}}</h1>
+        <p>{{product.category}}</p>
+        <p>{{product.description}}</p>
+        <p>RS:{{product.price}}</p>
+        <p>
+            <a href="{% url 'acart' product.id %}" class="btn btn-success">Add to cart</a>
+        </p>
+    </div>
+</div>
+{% endblock nav %}

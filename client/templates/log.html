@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+  
+{% block base %}
+      <!-- <h1 class="bg-dark text-light text-center"> Music Instruments</h1> -->
+    
+      <form action="" method="post">
+        {% csrf_token %}
+        <table class="table">
+          {{form.as_table}}
+        </table>
+        <div class="text-center">
+          <button align="center" class="btn btn-dark">LOGIN</button>
+          <!-- <a href="{% url 'reg' %}"> Register</a></div> -->
+      </form>
+{% endblock base %}
+    

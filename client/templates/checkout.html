@@ -1,0 +1,172 @@
+{% extends 'ind.html' %}
+{% block nav %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <style>
+        body {
+            background-color: lightblue;
+          }
+          
+          #form-wrapper {
+            background-color: white;
+            margin: auto;
+            margin-top: 100px;
+            width: 600px;
+            height: auto;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid lightgray;
+          }
+          
+          #header {
+            background-color: #638D99;
+            border-radius: 10px 10px 0px 0px;
+            border: lightgray solid 1px;
+          }
+          
+          h1 {
+            color: #D9F6FF;
+          }
+          
+          h5 {
+            color: #997654;
+          }
+          
+          i {
+            color: #997654;
+          }
+          
+          button i {
+            color: white;
+          }
+          
+          hr {
+            border-color: #E6C9AC;
+          }
+          
+          button {
+            background-color: #638D99 !important;
+          }
+          
+          select {
+            display: inline;
+          }
+    </style>
+
+</head>
+  <body>
+    <div id='form-wrapper'>
+        <form action="" method="post">
+            {% csrf_token %}
+      
+          <div id='header' class='text-center mb-3'>
+            <h1>MUSIC AMOR</h1>
+          </div>
+      
+        
+          <h5>Billing Info</h4>
+      
+            <hr>
+      
+            <div class='form-group mb-1'>
+              <label class='mb-1' for='firstName'>First Name</label>
+              <input class='form-control mb-1' id='firstName' type='text' placeholder='John'>
+            </div>
+      
+            <div class='form-group mb-1'>
+              <label class='mb-1' for='email'>Email</label>
+              <input id='email' type='email' class='form-control' placeholder='Dough'>
+            </div>
+      
+            <div class='form-group mb-1'>
+              <label class='mb-1'>Address</label>
+              <input class='form-control' type='text' id='street1' name="address" required placeholder='A1A Beach Front Ave'>
+            </div>
+      
+            <div class='form-group mb-1'>
+              <label class='mb-1' for='phone'>Phone</label>
+              <input type='number' id='' name="phone" class='form-control' required placeholder='9**********'>
+            </div>
+      
+            <div class='form-row mb-2'>
+              <div class='col-md-8'>
+                <label class='mb-1' for='state'>State</label>
+                <input id='state' class='form-control' placeholder='Florida'>
+              </div>
+              <div class='col-md-4'>
+      
+                <label class='mb-1' for='zip'>Zip</label>
+                <input type='text' id='zip' class='form-control' placeholder='00666'>
+              </div>
+            </div>
+      
+            <h5>Card Info</h4>
+      
+              <hr class='mb-1'>
+      
+              <div class='form-group mb-1'>
+                <label class='mb-1' for='nameOnCard'>Name on card</label>
+                <input class='form-control' id='nameOnCard' placeholder='Johnny Big Dough'>
+              </div>
+      
+              <div class='form-group mb-1'>
+                <label class='mb-1' for='cardNum'>Card number</label>
+                <input class='form-control' id='cardNum' placeholder>
+              </div>
+      
+              <div class='form-row mb-1'>
+                <div class='col'>
+                  <label class='mb-0' for='expMonth'>Expiration Month</label>
+                  <select class='form-control' id='expMonth'>
+                    <option value='01'>Jan</option>
+                    <option value='02'>Feb</option>
+                    <option value='03'>March</option>
+                    <option value='04'>April</option>
+                    <option value='05'>May</option>
+                    <option value='06'>June</option>
+                    <option value='07'>July</option>
+                    <option value='08'>Aug</option>
+                    <option value='09'>Sept</option>
+                    <option value='10'>Oct</option>
+                    <option value='11'>Nov</option>
+                    <option value='12'>Dec</option>
+                  </select>
+                </div>
+                <div class='col'>
+                  <label class='mb-0' for='expYear'>Exp Year</label>
+                  <select class='form-control' id='expYear'>
+                    <option value='2023'>2023</option>
+                    <option value='2023'>2022</option>
+                    <option value='2023'>2021</option>
+                    <option value='2023'>2020</option>
+                    <option value='2023'>2019</option>
+                  </select>
+                </div>
+                <div class='col'>
+                  <label class='mb-0' for='ccv'>Cancel Payment</label>
+                  <!-- <input placeholder='* * * *' class='form-control' id='ccv'> -->
+                  <a href="{% url 'vcart' %}">Cancel</a>
+                
+                </div>
+                <button class='btn btn-primary mt-4' type='submit'><i class="fas fa-lock mr-2"></i>Submit Payment</button>
+              </div>
+        </form>
+      </div>  
+    
+  </body>
+</html>
+{% endblock nav %}

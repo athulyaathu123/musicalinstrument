@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MUSIC AMOR</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<style>
+  body{
+    background-color: rgb(173, 165, 150);
+  }
+</style>
+</head>
+<body>
+  <div>
+    <h1 class="bg-black text-white">MUSIC AMOR</h1>
+  </div>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="{% url 'home' %}" class="w3-bar-item w3-button">Music Amor</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <!-- <a href="{% url 'log' %}" class="w3-bar-item w3-button">About</a> -->
+      <a href="{% url 'product' %}" class="w3-bar-item w3-button">Instruments</a>
+      <a href="{% url 'myorder' %}" class="w3-bar-item w3-button">My Orders</a>
+      <a href="{% url 'vcart' %}" class="w3-bar-item w3-button">Mycart <span class="badge badge-danger">{{count}}</span></a>
+      <a href="{% url 'lgout' %}" class="w3-bar-item w3-button">Logout</a>
+      <!-- <a href="#about" class="w3-bar-item w3-button">Mycart</a>
+      <a href="#menu" class="w3-bar-item w3-button">Instruments</a>
+      <a href="#contact" class="w3-bar-item w3-button">Myorder</a> -->
+      <form class="d-flex" role="search" action="{% url 'search' %}" method="get">
+        <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+      </form>
+      
+    </div>
+  </div>
+</div>
+{% block nav %}
+{% endblock nav %}
+</body>
+</html>

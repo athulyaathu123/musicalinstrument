@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+<h1 align="center">Registration</h1>
+{% block base %}
+    
+    <form action="" method="post">
+        {%csrf_token%}
+        <table class="table">
+            {{form.as_table}}
+        </table>
+        <div class="text-center">
+            <button class="btn btn-dark">Register</button>
+            <div class="form-footer">
+                <div>
+                    <span>Already Registerd</span> <a href="{% url 'log' %}">Sign In</a>
+                </div>
+            </div>
+        </div>
+        
+    </form>
+{% endblock base %}

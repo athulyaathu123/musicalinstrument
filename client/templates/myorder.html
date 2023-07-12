@@ -1,0 +1,70 @@
+{% extends "ind.html" %}
+
+{% block nav %}
+
+<h2 class="text-center">My Order</h2>
+{% if messages %}
+  {% for i in messages %}
+  {% if i.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+  <div class="alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>{{i}}</strong>
+  </div>
+  {%endif%}
+
+  {% if i.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+  <div class="alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>{{i}}</strong>
+  </div>
+  {%endif%}
+  {%endfor%}
+  {%endif%}
+{% for i in myorder.order %}
+<div class="p-5">
+<div class="row jumbotron">
+    <div class="col">
+        <img height="300px" src="{{i.product.image.url}}" alt="">
+    </div>
+    <div class="col">
+        <ul class="list-group">
+            <li class="list-group-item">
+                {{i.product.name}}
+            </li>
+            <li class="list-group-item">
+                {{i.product.price}}
+            </li>
+            <li class="list-group-item">
+                {{i.date}}
+            </li>
+            <li class="list-group-item">
+                {{i.fromdate}}
+            </li>
+            <li class="list-group-item">
+                {{i.todate}}
+            </li>
+            <li class="list-group-item">
+                {% if i.status == 'Cancel' %}
+                <p class="text-danger">Order Cancelled</p>
+                {%else%}
+                    {% if i.status == 'Delivered' %}
+                    <p class="text-success">Order Delivered</p>
+                    {%else%}
+                        <p>{{i.status}}</p>
+                        <a href="{% url 'cancelorder' i.id %}" class="btn btn-danger">Cancel Order</a>
+                    {%endif%}
+                {%endif%}
+               <!-- <a href="{% url 'checkout' i.id %}" class="btn btn-success">Place order</a>
+               <a href="{% url 'delcart' i.id %}" class="btn btn-danger">Remove from cart</a> -->
+            </li>
+        </ul>
+    </div>
+   
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+{% endblock nav %}

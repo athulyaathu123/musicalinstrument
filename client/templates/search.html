@@ -1,0 +1,20 @@
+{% extends "ind.html" %}
+
+
+{% block nav %}
+<h1>search result</h1>
+<div class="card-group jumbotron P-5">
+  {% for i in searchpro %}
+  <div class="card mr-5 mb-3" style="width: 18rem;">
+    <img src="{{i.image.url}}" height="200px" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h1 class="card-title">{{i.name}}</h1>
+      <p class="card-text">{{i.category}}</p>
+      <p class="card-text">RS:{{i.price}}</p>
+    </div>
+    <!-- <p>No product found</p> -->
+  </div>
+  {% endfor %}
+</div>
+{% endblock nav %}
+
